@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { v1 as uuid } from 'uuid';
 import NewSongForm from './NewSongForm';
@@ -9,8 +9,6 @@ const SongList = () => {
     { title: 'i love you', id: 2 },
     { title: 'this wild darkness', id: 3 }
   ]);
-
-
 
   const addSong = (title) => {
     setSongList([...songList, { title, id: uuid()}])
