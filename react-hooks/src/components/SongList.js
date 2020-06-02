@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { v1 as uuid } from 'uuid';
+import NewSongForm from './NewSongForm';
 
 const SongList = () => {
   const [songList, setSongList] = useState([
@@ -9,15 +10,10 @@ const SongList = () => {
     { title: 'this wild darkness', id: 3 }
   ]);
 
-  const [input, setInput] = useState("");
 
-  const addSong = (e) => {
-    e.preventDefault();
-    setSongList([...songList, { title: input, id: uuid()}])
-  };
-  
-  const handleOnchange = (e) => {
-    setInput(e.target.value);
+
+  const addSong = (title) => {
+    setSongList([...songList, { title, id: uuid()}])
   };
 
   return (
@@ -26,10 +22,7 @@ const SongList = () => {
         return <li key={song.id}>{song.title}</li>
       })}
       </ul>
-      <form onSubmit={addSong}>
-        <input type="text" value={input} onChange={handleOnchange}></input>
-        <button>Add New Song</button>
-      </form>
+      <NewSongForm addSong={addSong}/>
     </div>
   );
 }
