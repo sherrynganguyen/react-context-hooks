@@ -8,7 +8,6 @@ const NavBar = () => {
     <div className="navbar">
       <h1>Reading List</h1>
       <p>Currently have {books.length} books to read</p>
-      <ul>{books.map((book) => <li key= {book.id}>{book.title}</li>)}</ul>
     </div>
   )
 };
