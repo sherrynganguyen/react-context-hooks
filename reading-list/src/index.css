@@ -60,3 +60,18 @@ code {
   margin: 20px;
   text-align: center;
 }
+
+.newbookform {
+  padding: 20px;
+  /* width: 100%; */
+}
+
+.newbookform input, button {
+  display: block;
+}
+
+input {
+  margin: 6px 0;
+  padding: 6px;
+  width: 95%;
+}
